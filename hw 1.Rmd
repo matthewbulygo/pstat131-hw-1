@@ -95,7 +95,7 @@ M = cor(N)
 corrplot(M, type='lower', order='hclust')
 ```
 
-Cylinders and displacement are strongly positively correlated with each other. This makes sense because the more cylinders you have the more engine displacement there is. I expected cty and hwy to be slightly less correlated with each other since cars usually get more mpg on the highway. 
+Cylinders and displacement are strongly positively correlated with each other. This makes sense because the more cylinders you have the more engine displacement there is. I expected cty and hwy to be slightly less correlated with each other since cars usually get more mpg on the highway.
 
 
 
