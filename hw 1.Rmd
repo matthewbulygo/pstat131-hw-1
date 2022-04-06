@@ -46,5 +46,35 @@ Question 6
 
 Question 1 would be predictive because we're predicting their response based on their data. Question 2 would be inferential because we're trying to find the relationship between the response and predictor. 
 
+Exporatory Data Analysis
+
+Exercise 1
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+library(ISLR)
+
+hist(mpg$hwy)
+```
+
+Most vehicles get between 15-30 highway miles per gallon.
+
+Exercise 2
+
+```{r}
+plot(mpg$hwy, mpg$cty)
+```
+
+There is a positive linear relationship between cty and hwy. It seems that cars get more mpg on the highway than in the city. Cars that get 30 mpg on the highway only get around 20 mpg in the city. 
+
+Exercise 3
+
+
+
+
+
+
+
 
 
