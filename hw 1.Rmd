@@ -2,73 +2,100 @@
 title: "PSTAT 131 HW 1"
 output: html_document
 date: '2022-04-06'
+author: "Matthew Bulygo"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-
-
-Question 1
+### Question 1
 
 Supervised learning is when we try to predict the response for future observations while with unsupervised learning we have no response variable to predict. The difference between them is that we don't have a response for unsupervised learning. 
 
-Question 2
 
-A regression model is quantitative which deals with numerical values. A classification model is qualitative which deals with different categories. 
+### Question 2
 
-Question 3
+A regression model is quantitative which deals with numerical values. A classification model is qualitative which deals with different categories.
+
+
+### Question 3
 
 Regression ML problems can deal with age or income. Classification ML problems deal with marriage status or political affiliation (Republican or Democrat).
 
-Question 4
+
+### Question 4
 
 Descriptive models visually show trends in data. Predictive models predict something with minimum reducible error. Inferential models show relationships between the outcome and predictors. 
 
-Question 5
+
+### Question 5
 
 Mechanistic is where we assume the form of f while in empirically-driven we do not assume the form of f. Empirically-driven needs much more observations. They both have problems with overfitting. 
 
 Empirically-driven would probably be easier to understand since we don't have to assume f.
 
-Question 6
+
+### Question 6
 
 Question 1 would be predictive because we're predicting their response based on their data. Question 2 would be inferential because we're trying to find the relationship between the response and predictor. 
 
-Exporatory Data Analysis
 
-Exercise 1
+# Exporatory Data Analysis
+
+### Exercise 1
 
 ```{r}
 library(tidyverse)
 library(tidymodels)
 library(ISLR)
 
-hist(mpg$hwy)
+hist(mpg$hwy, main="Highway miles per gallon", xlab="mpg")
 ```
 
 Most vehicles get between 15-30 highway miles per gallon.
 
-Exercise 2
+### Exercise 2
 
 ```{r}
-plot(mpg$hwy, mpg$cty)
+plot(mpg$hwy, mpg$cty, main="Scatterplot of city vs highway mpg",
+     ylab="City mpg", xlab="Highway mpg")
 ```
 
 There is a positive linear relationship between cty and hwy. It seems that cars get more mpg on the highway than in the city. Cars that get 30 mpg on the highway only get around 20 mpg in the city. 
 
-Exercise 3
+### Exercise 3
+
+```{r}
+counts <- table(mpg$manufacturer)
+barplot(sort(counts, decreasing=FALSE), horiz=TRUE,
+        main='# of cars by manufacturer', xlab='Count',
+        ylab='Manufacturer', las=1)
+
+```
+
+Dodge produced the most cars while Lincoln produced the least. 
+
+### Exercise 4
+
+```{r}
+boxplot(hwy~cyl, data=mpg, ylab="Highway mpg", xlab="# of cylinders")
+```
+
+Cars with more cylinders get less mpg on the highway.
+
+### Exercise 5
+
+```{r}
+library(corrplot)
+N <- mpg %>%
+    select(displ, year, cyl, cty, hwy)
+M = cor(N)
+corrplot(M, type='lower', order='hclust')
+```
+
+Cylinders and displacement are strongly positively correlated with each other. This makes sense because the more cylinders you have the more engine displacement there is. I expected cty and hwy to be slightly less correlated with each other since cars usually get more mpg on the highway. 
 
 
 
