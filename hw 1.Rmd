@@ -1,0 +1,50 @@
+---
+title: "PSTAT 131 HW 1"
+output: html_document
+date: '2022-04-06'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+
+
+Question 1
+
+Supervised learning is when we try to predict the response for future observations while with unsupervised learning we have no response variable to predict. The difference between them is that we don't have a response for unsupervised learning. 
+
+Question 2
+
+A regression model is quantitative which deals with numerical values. A classification model is qualitative which deals with different categories. 
+
+Question 3
+
+Regression ML problems can deal with age or income. Classification ML problems deal with marriage status or political affiliation (Republican or Democrat).
+
+Question 4
+
+Descriptive models visually show trends in data. Predictive models predict something with minimum reducible error. Inferential models show relationships between the outcome and predictors. 
+
+Question 5
+
+Mechanistic is where we assume the form of f while in empirically-driven we do not assume the form of f. Empirically-driven needs much more observations. They both have problems with overfitting. 
+
+Empirically-driven would probably be easier to understand since we don't have to assume f.
+
+Question 6
+
+Question 1 would be predictive because we're predicting their response based on their data. Question 2 would be inferential because we're trying to find the relationship between the response and predictor. 
+
+
+
