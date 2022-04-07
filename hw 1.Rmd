@@ -43,7 +43,7 @@ Empirically-driven would probably be easier to understand since we don't have to
 Question 1 would be predictive because we're predicting their response based on their data. Question 2 would be inferential because we're trying to find the relationship between the response and predictor. 
 
 
-# Exporatory Data Analysis
+# Exploratory Data Analysis
 
 ### Exercise 1
 
